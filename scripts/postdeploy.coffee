@@ -19,7 +19,6 @@
 
 url = require('url')
 querystring = require('querystring')
-gitio = require('gitio')
 
 module.exports = (robot) ->
 
