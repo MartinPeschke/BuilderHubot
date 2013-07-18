@@ -26,7 +26,7 @@ module.exports = (robot) ->
   robot.hear /deploy ([0-9a-zA-Z_-]*) ([0-9a-zA-Z_-]*)/i, (msg) ->
     if msg.match[1] and msg.match[2]
         msg.send "Okay Boss, getting right on it!"
-        p = proc.spawn 'fab', ['-u', 'www-data', '-i', 'deploy_bellerophon', '-H', 'bellerophon', 'deploy:env=dev'], {cwd: ('../repos/wines/deploy/')}
+        p = proc.spawn 'fab', ['-u', 'www-data', '-i', '../deploy_key', '-H', 'bellerophon', 'deploy:env=dev'], {cwd: ('../repos/wines/deploy/')}
         p.stderr.on 'data', (data) -> msg.send 'stderr: ' + data
         p.on 'exit', (code) ->
           if code
