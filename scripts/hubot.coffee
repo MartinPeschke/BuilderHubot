@@ -31,12 +31,12 @@ module.exports = (robot) ->
         env = msg.match[3]
         
         msg.send "Okay Boss, getting right on it!"
-        p = proc.spawn 'fab', ['-u', 'www-data', '-i', '../../../deploy_key', '-H', host, 'deploy:env=#{env}'], {cwd: ('../repos/#{project}/deploy/')}
-        p.stderr.on 'data', (data) -> msg.send 'stderr: ' + data
-        p.on 'exit', (code) ->
+        p = proc.spawn "fab", ["-u", "www-data", "-i", "../../../deploy_key", "-H", host, "deploy:env="+env], {cwd: ("../repos//deploy/")}
+        p.stderr.on "data", (data) -> msg.send "stderr: " + data
+        p.on "exit", (code) ->
           if code
-            msg.send 'Deployment FAILED with ' + code
+            msg.send "Deployment FAILED with " + code
           else
-            msg.send('Deploying #{msg.match[1]} / #{msg.match[2]} SUCCEEDED in #{(( new Date().getTime() - starttime ) / 1000)} s')
+            msg.send("Deploying #{msg.match[1]} / #{msg.match[2]} SUCCEEDED in #{(( new Date().getTime() - starttime ) / 1000)} s")
     else
         msg.send "Something is missing!"
