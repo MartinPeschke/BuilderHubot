@@ -37,6 +37,6 @@ module.exports = (robot) ->
           if code
             msg.send "Deployment FAILED with " + code
           else
-            msg.send("Deploying #{msg.match[1]} / #{msg.match[2]} SUCCEEDED in #{(( new Date().getTime() - starttime ) / 1000)} s")
+            msg.send("Deploying #{project} / #{env} to #{host} SUCCEEDED in #{(( new Date().getTime() - starttime ) / 1000)} s")
     else
         msg.send "Something is missing!"
