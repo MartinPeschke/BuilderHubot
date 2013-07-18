@@ -1,0 +1,26 @@
+{
+  "name": "hackandcraft-hubot-scripts",
+  "version": "0.0.1",
+  "main": "index.coffee"
+  "author": "martinpeschke",
+
+  "keywords": [
+    "hubot",
+    "plugin",
+    "scripts",
+    "campfire",
+    "bot",
+    "robot"
+  ],
+
+  "description": "custom scrkipts",
+
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/MartinPeschke/BuilderHubot"
+  },
+
+  "dependencies": {
+    "redis": "0.8.4"
+  }
+}
