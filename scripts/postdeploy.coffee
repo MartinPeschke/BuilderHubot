@@ -22,9 +22,8 @@ querystring = require('querystring')
 
 module.exports = (robot) ->
 
-  robot.router.get "/deploy/project", (req, res) ->
+  robot.router.post "/deploy/project", (req, res) ->
     query = querystring.parse(url.parse(req.url).query)
-
     res.end
     user = {}
     user.room = query.room if query.room
@@ -32,6 +31,8 @@ module.exports = (robot) ->
 
     try
       payload = JSON.parse req.body.payload
+      if payload.commits.length > 0
+        robot.send user, "Got #{payload.commits.length} new commits from #{payload.commits[0].author.name} on #{payload.repository.name}"
 
       robot.send user, "DEPLOYED # new commits"
 
