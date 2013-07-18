@@ -33,8 +33,8 @@ module.exports = (robot) ->
       payload = JSON.parse req.body.payload
       if payload.commits.length > 0
         robot.send user, "Got #{payload.commits.length} new commits from #{payload.commits[0].author.name} on #{payload.repository.name}"
-
-      robot.send user, "DEPLOYED # new commits"
+      else
+        robot.send user, "DEPLOYED, but got nothing new"
 
     catch error
       console.log "postdeploy error: #{error}. Payload: #{req.body.payload}"
