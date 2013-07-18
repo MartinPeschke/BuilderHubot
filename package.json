@@ -1,7 +1,7 @@
 {
   "name": "hackandcraft-hubot-scripts",
   "version": "0.0.1",
-  "main": "index.coffee"
+  "main": "index.coffee",
   "author": "martinpeschke",
 
   "keywords": [
