@@ -36,6 +36,5 @@ module.exports = (robot) ->
 
       robot.send user, "DEPLOYED # new commits"
 
-
     catch error
-      console.log "github-commits error: #{error}. Payload: #{req.body.payload}"
+      console.log "postdeploy error: #{error}. Payload: #{req.body.payload}"
