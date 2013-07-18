@@ -30,7 +30,7 @@ module.exports = (robot) ->
     user.type = query.type if query.type
 
     try
-      payload = JSON.parse req.body
+      payload = req.body
       if payload.commits.length > 0
         robot.send user, "Got #{payload.commits.length} new commits from #{payload.commits[0].author.name} on #{payload.repository.name}"
       else
