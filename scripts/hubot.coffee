@@ -8,7 +8,7 @@
 #
 # Commands:
 #   projects - lists all available projects
-#   deploy <host> <project> <env> - deploys project to environment
+#   deploy <project> <env> <target-host> - deploys project to environment
 #
 # Author:
 #   mpeschke
@@ -26,12 +26,12 @@ module.exports = (robot) ->
   robot.respond /deploy ([0-9a-zA-Z_-]*) ([0-9a-zA-Z_-]*) ([0-9a-zA-Z_-]*)/i, (msg) ->
     if msg.match[1] and msg.match[2]
         
-        host = msg.match[1]
-        project = msg.match[2]
-        env = msg.match[3]
+        project = msg.match[1]
+        env = msg.match[2]
+        host = msg.match[3]
         
         msg.send "Okay Boss, getting right on it!"
-        p = proc.spawn "fab", ["-u", "www-data", "-i", "../../../deploy_key", "-H", host, "deploy:env="+env], {cwd: ("../repos//deploy/")}
+        p = proc.spawn "fab", ["-u", "www-data", "-i", "../../../deploy_key", "-H", host, "deploy:env=#{env}"], {cwd: ("../repos/#{project}/deploy/")}
         p.stderr.on "data", (data) -> msg.send "stderr: " + data
         p.on "exit", (code) ->
           if code
