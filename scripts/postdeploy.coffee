@@ -32,7 +32,8 @@ module.exports = (robot) ->
     try
       payload = req.body
       if payload.commits.length > 0
-        robot.send user, "Got #{payload.commits.length} new commits from #{payload.commits[0].name}"
+        payload.commits.forEach (commit) ->
+          robot.send user, "DEPLOYED: #{commit.date}:#{commit.name}:#{commit.subject}"
       else
         robot.send user, "DEPLOYED, but got nothing new"
 

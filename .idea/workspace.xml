@@ -13,6 +13,7 @@
     <file path="/fabfile.py" changelist="30fed509-9a58-4ff9-8b5d-9feee71afd9e" time="1374247196101" ignored="false" />
     <file path="/fragment.py" changelist="30fed509-9a58-4ff9-8b5d-9feee71afd9e" time="1374246615996" ignored="false" />
     <file path="/hubot.coffee" changelist="30fed509-9a58-4ff9-8b5d-9feee71afd9e" time="1374247286747" ignored="false" />
+    <file path="/postdeploy.coffee" changelist="30fed509-9a58-4ff9-8b5d-9feee71afd9e" time="1374247858760" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
       <file leaf-file-name="postdeploy.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/postdeploy.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="100" selection-start="786" selection-end="786" vertical-scroll-proportion="0.47121534">
+            <state line="35" column="86" selection-start="816" selection-end="816" vertical-scroll-proportion="0.48507464">
               <folding />
             </state>
           </provider>
@@ -261,7 +262,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/postdeploy.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="100" selection-start="786" selection-end="786" vertical-scroll-proportion="0.47121534">
+        <state line="35" column="86" selection-start="816" selection-end="816" vertical-scroll-proportion="0.48507464">
           <folding />
         </state>
       </provider>
