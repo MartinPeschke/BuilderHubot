@@ -24,7 +24,8 @@ module.exports = (robot) ->
 
   robot.router.post "/deploy/project", (req, res) ->
     query = querystring.parse(url.parse(req.url).query)
-    res.end
+    res.writeHead 200, {'Content-Type': 'text/plain'}
+    res.end 'Hello World\n'
     user = {}
     user.room = query.room if query.room
     user.type = query.type if query.type
