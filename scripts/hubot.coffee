@@ -7,6 +7,7 @@
 # Configuration:
 #
 # Commands:
+#   who did it? - you did, boss
 #   projects - lists all available projects
 #   deploy <project> <env> <target-host> - deploys project to environment
 #
@@ -18,6 +19,11 @@ util  = require 'util'
 proc = require 'child_process'
 
 module.exports = (robot) ->
+  robot.hear /^who did it\?$/i, (msg) ->
+      sender = msg.message.user.name.toLowerCase()
+      msg.send("@"+sender+" You did it, Boss! You did it again!")
+
+
   robot.respond /projects/i, (msg) ->
     fs.readdir "../repos", (err, data) ->
       data.forEach (f) ->
