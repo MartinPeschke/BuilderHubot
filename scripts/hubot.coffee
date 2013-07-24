@@ -22,7 +22,8 @@ module.exports = (robot) ->
   robot.hear /who did it\?/i, (msg) ->
       msg.send("You did it, Boss! You did it again!")
       msg.send("Who else? Really...")
-
+  robot.hear /who did it again\?/i, (msg) ->
+      msg.send("You, Boss, no question! Is there anyone else?")
 
   robot.respond /projects/i, (msg) ->
     fs.readdir "../repos", (err, data) ->
