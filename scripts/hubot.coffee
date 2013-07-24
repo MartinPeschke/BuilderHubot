@@ -21,6 +21,7 @@ proc = require 'child_process'
 module.exports = (robot) ->
   robot.hear /who did it\?/i, (msg) ->
       msg.send("You did it, Boss! You did it again!")
+      msg.send("Who else? Really...")
 
 
   robot.respond /projects/i, (msg) ->
