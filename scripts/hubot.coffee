@@ -28,6 +28,9 @@ module.exports = (robot) ->
   robot.hear /have we won yet\?/i, (msg) ->
       msg.send("Won? When are you not winning boss? It is constant winning. Nothing less we are used too.?")
 
+  robot.hear /knock knock/i, (msg) ->
+      msg.send("Piss off.")
+
   robot.respond /projects/i, (msg) ->
     fs.readdir "../repos", (err, data) ->
       data.forEach (f) ->
