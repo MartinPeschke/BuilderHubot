@@ -20,8 +20,7 @@ proc = require 'child_process'
 
 module.exports = (robot) ->
   robot.hear /who did it\?/i, (msg) ->
-      sender = msg.message.user.name.toLowerCase()
-      msg.send("@"+sender+" You did it, Boss! You did it again!")
+      msg.send("You did it, Boss! You did it again!")
 
 
   robot.respond /projects/i, (msg) ->
